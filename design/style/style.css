@@ -1,0 +1,76 @@
+header {
+    padding: 15px;
+    background: #5F5F5F;
+    margin-bottom: 25px;;
+}
+.result{
+    width: 15px;
+    padding: 25px
+}
+.floatRight{
+    display: none;
+}
+ul li {
+    display:inline;
+    margin:10px;
+    cursor:pointer;
+}
+#news{
+    height:700px;
+    overflow: scroll;
+}
+.form{
+    margin-left:450px;
+}
+input[name=email]{
+    margin-left:43px;
+}
+input[name=last]{
+    margin-left: 22px;
+}
+input[name=password]{
+    margin-left:18px;
+}
+input{
+    margin: 15px;
+}
+.menu
+section {
+
+    padding: 50px;
+    background: #9BFFF0;
+
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+}
+footer {
+    padding: 10px;
+    background: darkturquoise;
+    margin-top: 25px;;
+}
+
+#error {
+    background: darkred;
+    font-size: 23px;
+    font-family: Verdana;
+    padding: 15px;
+}
+.menu{
+ display: inline;
+    font-family: Verdana;
+    padding: 11px;
+    cursor: pointer;
+}
+.menu a{
+    color:darkorange;
+    text-decoration: none;
+}
+
+.menu a:active{
+    color:white;
+}
+.menu:hover{
+    background: aqua;
+}
