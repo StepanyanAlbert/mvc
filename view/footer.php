@@ -1,20 +1,7 @@
 </section>
 <footer>
-  
-    <script>
-        $(document).ready(function(){
-$(".languages").click(function(){
-    $val=($(this).attr("title"));
-    $.ajax({
-        type:"POST",
-        url:"http://localhost/project_mvc/index.php",
-        data:{language:$val},
-        success:function(){
-         location.reload();
-        }
-    });
-});
-        }); 
-    </script>
     <p>&copy; Designed  by </p>
 </footer>
+<script src="<?php echo  $glob_host->req_scheme.$glob_host->host.$glob_host->project_name;?>design/script/script.js"></script>
+</body>
+</html>

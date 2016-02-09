@@ -1,9 +1,5 @@
 <?php
 class Insert_data_model extends Model{
-    private $name;
-    private $lastname;
-    private $email;
-    private $password;
     public function __construct()
     {
         parent::__construct();
@@ -15,7 +11,9 @@ class Insert_data_model extends Model{
         $this->lastname=$lastname;
         $this->email=$email;
         $this->password=$password;
-        var_dump($name,$lastname,$email,$password);
+        $sth=$this->connect->prepare("Insert into users (`user_firstname`,`user_lastname`,`user_email`,`user_password`) values ('$name','$lastname','$email','$password')");
+        $sth->execute();
+
     }
 
 }

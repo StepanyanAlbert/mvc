@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <News>
+        <en>News</en>
+        <arm>Նորությունններ</arm>
+        <ru>Новости</ru>
+    </News>
+
+    <About_us>
+        <en>About us</en>
+        <arm>Մեր մասին</arm>
+        <ru>Про нас</ru>
+    </About_us>
+
+    <Contact>
+        <en>Contact</en>
+        <arm>Կոնտակտ</arm>
+        <ru>Контакты</ru>
+    </Contact>
+
+    <costumers>
+        <en>All costumers</en>
+        <arm>Բոլոր հաճախորդները</arm>
+        <ru>Все клиенты</ru>
+    </costumers>
+
+    <Location>
+        <en>Location</en>
+        <arm>Գտնվելու վայր</arm>
+        <ru>Место нахождения</ru>
+    </Location>
+        <Site_map>
+
+        <en>Show Location</en>
+        <arm>Կայքի քարտեզ</arm>
+        <ru>Карта сайта</ru>
+    </Site_map>
+
+      <Donate>
+            <en>Donate )) </en>
+            <arm>Նվիրաբերիր ))</arm>
+            <ru>Дарить ))</ru>
+      </Donate>
+
+    <Send_us_an_email>
+        <en>Send us an email </en>
+        <arm>Ուղարկել նամակ</arm>
+        <ru>Отправить нам письмо</ru>
+    </Send_us_an_email>
+
+    <Buy_premium_version>
+        <en>Buy premium version</en>
+        <arm>Գնել պրեմիում տարբերակը</arm>
+        <ru>Купить премиум версию</ru>
+    </Buy_premium_version>
+        <show_loc>
+            <en>Show location</en>
+            <arm>Գտվելու վայր</arm>
+            <ru>Место нахождения</ru>
+        </show_loc>
+            <Update>
+                <en>Update</en>
+                <arm>Թարմացնել</arm>
+                <ru>Обновить</ru>
+            </Update>
+
+    <Delete>
+        <en>Delete</en>
+        <arm>Ջնջել</arm>
+        <ru>Удалить</ru>
+    </Delete>
+        <Add>
+            <en>Add</en>
+            <arm>Ավելացնել</arm>
+            <ru>Добавить</ru>
+        </Add>
+</translations>

@@ -1,6 +1,7 @@
 <?php
 class Controller
 { public $model;
+
     public function __construct($model_name=null)
     {
         $this->view = new View();
@@ -11,6 +12,7 @@ class Controller
             $name = ucfirst($model_name . '_model');
             $this->model = new $name();
         }
+
     }
     /**
      * @param $model_name specifie the model which needs to be loaded

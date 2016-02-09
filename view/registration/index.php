@@ -1,5 +1,5 @@
 <div class="form">
-<form action="http://localhost:8080/mvc2/user_data" method="post">
+<form action="<?php echo  $glob_host->req_scheme.$glob_host->host.$glob_host->project_name;?>user_data" method="post">
 Type your firstname <input type="text" name="name"><br>
     Type your lastname<input type="text" name="last"><br>
     Type your email<input type="text" name="email"><br>

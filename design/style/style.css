@@ -1,7 +1,6 @@
 header {
     padding: 15px;
     background: #5F5F5F;
-    margin-bottom: 25px;;
 }
 .result{
     width: 15px;
@@ -12,12 +11,18 @@ header {
 }
 ul li {
     display:inline;
-    margin:10px;
+}
+.ulli li{
+    display:inline;
+    margin-right:30px;
     cursor:pointer;
+    float: right;
+    position: relative;
+    bottom: 10px;
 }
 #news{
     height:700px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .form{
     margin-left:450px;
@@ -34,12 +39,10 @@ input[name=password]{
 input{
     margin: 15px;
 }
-.menu
+
 section {
-
-    padding: 50px;
+    padding: 100px;
     background: #9BFFF0;
-
 }
 table{
     margin: auto;
@@ -48,7 +51,6 @@ table{
 footer {
     padding: 10px;
     background: darkturquoise;
-    margin-top: 25px;;
 }
 
 #error {
@@ -63,14 +65,56 @@ footer {
     padding: 11px;
     cursor: pointer;
 }
-.menu a{
+ a{
     color:darkorange;
     text-decoration: none;
 }
 
-.menu a:active{
+ a:active{
     color:white;
 }
 .menu:hover{
     background: aqua;
 }
+aside{
+    float: right;
+   position: relative;
+    bottom:35px;
+    left: 80px;
+}
+aside li{
+    display: block;
+
+    font-family:Verdana;
+    font-size: 18px;
+    padding: 10px;
+
+}
+aside a {
+    color: #435c70;
+}
+aside li:hover{
+    background: darkorange;;
+}
+td a{
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Class Contact
  * contact ontroller has to get data from inoputs and isert it in database

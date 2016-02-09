@@ -5,6 +5,18 @@ class Bootstrap
     public $default_action='about';
     public $index_page='select';
     public function __construct(){
+        $files = glob('model/*.php');
+
+        foreach ($files as $file) {
+            require($file);
+
+        }
+        $fil = glob('components./*.php');
+
+        foreach ($fil as $fi) {
+            require($fi);
+        }
+        $new=new Insert();
 
         $url=isset($_GET['url'])? $_GET['url'] :null;
         $url=rtrim($url,'/');
@@ -31,10 +43,10 @@ class Bootstrap
         }
         else{
             require_once 'Controller/'.$this->index_page.'.php';
-            $control=ucfirst(($this->index_page));
-            $obj=new $control() ;
+           $control=ucfirst(($this->index_page));
+           $obj=new $control() ;
             $action=$this->default_action;
-            $obj->$action();
+           $obj->$action();
         }
 
     }

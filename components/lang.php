@@ -1,43 +1,31 @@
 <?php
-class Lang{
 
-public static function create_(){
- 
-       
-       
-          
-}
-public static function tr($attribut){
-   $lang =  $_SESSION['lang'];
-   $row = 1;
-if (($handle = fopen('http://localhost/project_mvc/components/menu.csv', 0777)) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $num = count($data);
-        echo "<p> $num полей в строке $row: <br /></p>\n";
-        $row++;
-        for ($c=0; $c < $num; $c++) {
-            echo $data[$c] . "<br />\n";
+class Lang
+{
+    public static function tr($attribut, $file)
+    {
+
+        if (isset($_SESSION['lang'])) {
+            $lang = $_SESSION['lang'];
+        } else{
+            $lang = 0;  }
+        $blnExist = false;
+        if (($handle = fopen($file . '.csv', "a+")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                if ($data[0] == $attribut) {
+                    $blnExist = true;
+                    $result = $data[$lang];
+                }
+            }
+            if (!$blnExist) {
+                fputcsv($handle, array($attribut, $attribut, $attribut));
+                $result = $attribut;
+            }
         }
+        //return $result;
     }
-    fclose($handle);
-}
-   
-   
-    
-    
-    
-    
-     fclose($fp);
-}
+
 
 }
 
-
- 
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
