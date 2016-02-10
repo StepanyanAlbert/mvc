@@ -1,62 +1,85 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<style> table{
-        border-collapse: collapse;
-    }</style>
 <?php
 
 class Create_table
 {
-public static function create()
- {
-     return new Create_table();
- }
-    public  static function create_tabl($count=[]){
+    public static function create()
+    {
+        return new Create_table();
+    }
 
-       echo $count->param1;
-       echo $count->param2;
-        call_user_func_array('create_tabl', array('1',555));
+    public static function create_tabl($count = [])
+    {
+
+        echo $count->param1;
+        echo $count->param2;
+        call_user_func_array('create_tabl', array('1', 555));
     }
 
 
-}
+    /**
+     * @param $params
+     * @param header_title   array content of th tags --array
+     * @param   buttons  addidtional th for buutons like add update or ......  --array
+     * @param td values
+     * @param border_value   table border value
+     * @param  specify class_name_theader table header class
+     */
+    public static function createDatagrid($array)
+    {
+        $object = $array['data'];
+        $arrList = $object->getAll();
 
+        $attributs = $object->getAttributes();
 
-/**
- * @param $params
- * @param header_title   array content of th tags --array
- * @param   buttons  addidtional th for buutons like add update or ......  --array
- * @param td values
- * @param border_value   table border value
-  */
-function function_name($params) {
+        $html = '<table border="1" style="border-collapse: collapse" cellpadding="25px">';
+        if ($array['enableHeader']) {
 
-    ?><table border="<?php if(isset($params->border_value)){ echo $params->border_value;}else{echo 1;} ?>"
-    cellpadding="<?php if(isset($params->cellpadding)){echo $params->cellpadding;}else {echo 5;} ?>"><thead><tr>;
-<?php
-     foreach($params->header_title as $titles){
+            $html .= '<thead> <tr>';
 
-         echo '<th class="">'. $titles.'</th>';
-     }
-    if(isset($params->buttons)){
-        foreach($params->buttons as $buttons ){
-            echo '<th>'. $buttons.'</th>';
+if(isset($array['columns'])){
+
+    foreach ($attributs as $key => $value) {
+        if(in_array($value,$array['columns'])){
+            $html .= '<td>' . $value . '</td>';
+
         }
     }
-echo '</tr><tr>';
-   foreach($params->field as $value) {
-       echo '<td>'.$value.'</td>';
-   }
 
-    echo '</tr></thead><tbody>';
 
-    echo '</tbody></table>';
 
+
+}else{
+    foreach ($attributs as $key => $value) {
+        $html .= '<td>' . $value . '</td>';
+    }
 
 }
 
-$params = (object) array( 'header_title' =>
- array("User id","User_name","User_email","User_password"),'field'=>
- array("First value","second",'sadasd ',"<i class=\"fa fa-anchor\"></i>value"), 'border_value'=>4,
-    'cellpadding');
 
-call_user_func_array('function_name', array($params));die;
+
+            $html .= '</tr></thead>';
+        }
+            $html .= '<tbody>';
+            foreach($arrList as $k => $v){
+
+                $html .= '<tr>';
+                foreach($v as $nkey =>$nval){
+                    $html .= '<td>'.$nval.'</td>';
+
+
+                }
+                $html .= '</tr>';
+            }
+
+
+
+            $html .= '</tbody>';
+
+
+
+        $html .= '</table>';
+        return $html;
+    }
+}
+

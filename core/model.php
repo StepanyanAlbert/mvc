@@ -7,11 +7,8 @@ class Model
     private $pass = '';
     protected $dbname='users';
     public $connect;
-    public $tableName;
-    public function getAll(){
 
-        $qyer = 'select * from '.$this->tableName;
-    }
+
     public function __construct()
     {
         try {
@@ -24,11 +21,34 @@ class Model
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
+
+
+    }
+function setAttributs(){
+
+    $sth = $this->connect->query('SHOW COLUMNS FROM ' . $this->tableName);
+
+//Fetch our result.
+    $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+    foreach($array as $key =>$value){
+       $this->attributes[]=$value["Field"];
     }
 
+
+}
+    function getAttributes(){
+
+        return $this->attributes;
+    }
     public function __destruct()
     {
         $this->connect = null;
     }
-
+    public function getAll()
+    {
+        $sth=$this->connect->prepare("Select * from $this->tableName");
+        $sth->execute();
+        $result=$sth->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

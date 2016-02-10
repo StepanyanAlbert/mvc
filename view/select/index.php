@@ -1,26 +1,28 @@
 <?php
 //$new = new User_model();
-//table::createDatagrid($new,
-//    array(
-//
-//    'column'=>array(
-//       'id',
-//        'name'=>array(
-//            'class'=>'name',
-//
-//
-//        ),
-//        'buttons'=>array(
-//            'edit','delete','view'
-//        ),
-//
-//
-//    ),
-//
-//
-//
-//
-//));
+$new=new www_model();
+echo $new->getAllFrom();
+die;
+table::createDatagrid($new,
+   array(
+
+       'column'=>array(
+       'id',
+        'name'=>array(
+            'class'=>'name',
+
+
+        ),
+        'buttons'=>array(
+            'edit','delete','view'
+        ),
+
+   ),
+
+
+
+
+));
 
 
 ?>

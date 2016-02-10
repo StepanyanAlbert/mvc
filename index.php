@@ -19,5 +19,29 @@ require_once 'core/view.php';
 
 
 $control =new Bootstrap();
+$objUser= new User_model();
+
+echo Create_table::createDatagrid(
+    array(
+        'data'=>$objUser,
+        'enableHeader'=>true,
+        'columns'=>array(
+            'user_firstname',
+            'buttons'=>array(
+                'edit'=>array(
+
+                    'url'=>''
+                )
+
+
+
+            )
+
+        ),
+
+
+    )
+
+);
 
 ?>
